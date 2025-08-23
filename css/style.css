@@ -47,6 +47,8 @@ section{
     padding:2rem 7%;
 }
 
+/* ---- Titulos ---- */
+
 .heading{
     text-align: center;
     color:#fff;
@@ -59,6 +61,8 @@ section{
     color:var(--main-color);
     text-transform: uppercase;
 }
+
+/* ---- Fim Titulos ---- */
 
 .btn{
     margin-top: 1rem;
@@ -309,19 +313,19 @@ section{
     color:var(--black);
 }
 
-.products .box-container{
+.produtos .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap:1.5rem;
 }
 
-.products .box-container .box{
+.produtos .box-container .box{
     text-align: center;
     border:var(--border);
     padding: 2rem;
 }
 
-.products .box-container .box .icons a{
+.produtos .box-container .box .icons a{
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -331,38 +335,38 @@ section{
     margin:.3rem;
 }
 
-.products .box-container .box .icons a:hover{
+.produtos .box-container .box .icons a:hover{
     background:var(--main-color);
 }
 
-.products .box-container .box .image{
+.produtos .box-container .box .image{
     padding: 2.5rem 0;
 }
 
-.products .box-container .box .image img{
+.produtos .box-container .box .image img{
     height: 25rem;
 }
 
-.products .box-container .box .content h3{
+.produtos .box-container .box .content h3{
     color:#fff;
     font-size: 2.5rem;
 }
 
-.products .box-container .box .content .stars{
+.produtos .box-container .box .content .stars{
     padding: 1.5rem;
 }
 
-.products .box-container .box .content .stars i{
+.produtos .box-container .box .content .stars i{
     font-size: 1.7rem;
     color: var(--main-color);
 }
 
-.products .box-container .box .content .price{
+.produtos .box-container .box .content .price{
     color:#fff;
     font-size: 2.5rem;
 }
 
-.products .box-container .box .content .price span{
+.produtos .box-container .box .content .price span{
     text-decoration: line-through;
     font-weight: lighter;
     font-size: 1.5rem;
