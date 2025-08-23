@@ -37,7 +37,7 @@ html::-webkit-scrollbar-thumb{
     background: #fff;
     border-radius: 5rem;
 }
-/* ---- Scrollbar ---- */
+/* ---- Fim Scrollbar ---- */
 
 body{
     background: var(--bg);
@@ -233,6 +233,9 @@ section{
     color:#eee;
 }
 
+.about {
+    margin-top: 10em;
+}
 .about .row{
     display: flex;
     align-items: center;
