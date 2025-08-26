@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Produtos - ALPHA CLOTHING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header scrolled">
+        <a href="index.html" class="header__logo">ALPHA CLOTHING</a>
+        <nav class="header__nav">
+            <a href="index.html" class="header__nav-link">Home</a>
+            <a href="index.html#about" class="header__nav-link">About Us</a>
+            <a href="#" class="header__nav-link active">Produtos</a>
+            <a href="index.html#contact" class="header__nav-link">Contato</a>
+            <a href="index.html#blogs" class="header__nav-link">Blog</a>
+        </nav>
+        <div class="header__icons">
+            <div class="header__icon-item" id="search-btn"><i class="fas fa-search"></i></div>
+            <a href="carrinho.html" class="header__icon-item cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <main class="produtos-main">
+        <aside class="barra-lateral-filtros">
+            <h3 class="barra-lateral__titulo">Filtros</h3>
+            
+            <div class="grupo-filtro grupo-filtro-busca">
+                <input type="text" id="campo-busca" placeholder="Buscar produtos...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="grupo-filtro grupo-filtro-categorias">
+                <h4>Categorias</h4>
+                <div class="botoes-categoria">
+                    <button class="botao-categoria ativo" data-category="all">Todas as Peças</button>
+                    <button class="botao-categoria" data-category="blusas">Blusas</button>
+                    <button class="botao-categoria" data-category="calcas">Calças</button>
+                    <button class="botao-categoria" data-category="vestidos">Vestidos</button>
+                    <button class="botao-categoria" data-category="acessorios">Acessórios</button>
+                </div>
+            </div>
+        </aside>
+
+        <section class="secao-produtos">
+            <div class="conteudo-produtos">
+                <div class="cabecalho-conteudo-produtos">
+                    <div class="info-cabecalho">
+                        <h2 class="titulo-secao">Nossos <span>Produtos</span></h2>
+                        <p class="contador-produto">Exibindo <span>0</span> produtos</p>
+                    </div>
+                    <div class="ordenacao-dropdown">
+                        <label for="ordenar-por">Ordenar por Preço:</label>
+                        <select id="ordenar-por">
+                            <option value="default">Padrão</option>
+                            <option value="asc">Menor para Maior</option>
+                            <option value="desc">Maior para Menor</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grade-produtos">
+                </div>
+                
+                <div class="mensagem-sem-produtos" style="display:none;">
+                    <h3>Nenhum produto encontrado!</h3>
+                    <p>Por favor, ajuste seus filtros ou termo de busca.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal-visualizacao-rapida">
+        <div class="modal__conteudo">
+            <span class="modal__botao-fechar">&times;</span>
+            <div class="modal__detalhes-produto">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
