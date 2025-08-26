@@ -58,10 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         $${produto.price.toFixed(2)} ${precoOriginal}
                     </div>
                     <button class="botao botao-adicionar-carrinho" data-id="${produto.id}">ADICIONAR AO CARRINHO</button>
-                    <div class="produtos__icones">
-                        <i class="fas fa-shopping-cart" data-id="${produto.id}" title="Adicionar ao Carrinho"></i>
-                        <i class="fas fa-eye" data-id="${produto.id}" title="Visualização Rápida"></i>
-                    </div>
+                    
                 `;
                 gradeProdutos.appendChild(cartaoProduto);
             });
