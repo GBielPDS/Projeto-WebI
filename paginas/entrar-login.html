@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="../css/entrar-login.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form">
+            <img src="../images/logo.png" alt="Logo do site" style="display:block;margin:0 auto 15px auto;width:80px;height:auto;">
+            <h2>Login</h2>
+            <div id="login-msg" class="msg"></div>
+            <input type="text" id="login-usuario" placeholder="Usuário" required>
+            <input type="password" id="login-senha" placeholder="Senha" required>
+            <button onclick="login()">Entrar</button>
+            <span class="toggle-link" onclick="toggleForm('cadastro')">Não tem conta? Cadastre-se</span>
+        </div>
+        <div id="cadastro-form" style="display:none;">
+            <img src="../images/logo.png" alt="Logo do site" style="display:block;margin:0 auto 15px auto;width:80px;height:auto;">
+            <h2>Cadastro</h2>
+            <div id="cadastro-msg" class="msg"></div>
+            <input type="text" id="cadastro-usuario" placeholder="Usuário" required>
+            <input type="password" id="cadastro-senha" placeholder="Senha" required>
+            <button onclick="cadastro()">Cadastrar</button>
+            <span class="toggle-link" onclick="toggleForm('login')">Já tem conta? Faça login</span>
+        </div>
+    </div>
+    <script>
+        // Função para obter usuários do Local Storage
+        function getUsuarios() {
+            return JSON.parse(localStorage.getItem('usuarios') || '{}');
+        }
+
+        // Função para salvar usuários no Local Storage
+        function setUsuarios(usuarios) {
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+
+        function toggleForm(form) {
+            document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
+            document.getElementById('cadastro-form').style.display = form === 'cadastro' ? 'block' : 'none';
+            document.getElementById('login-msg').textContent = '';
+            document.getElementById('cadastro-msg').textContent = '';
+        }
+
+        function cadastro() {
+            const usuario = document.getElementById('cadastro-usuario').value.trim();
+            const senha = document.getElementById('cadastro-senha').value.trim();
+            let usuarios = getUsuarios();
+            if (!usuario || !senha) {
+                document.getElementById('cadastro-msg').textContent = 'Preencha todos os campos!';
+                document.getElementById('cadastro-msg').className = 'error';
+                return;
+            }
+            if (usuarios[usuario]) {
+                document.getElementById('cadastro-msg').textContent = 'Usuário já existe!';
+                document.getElementById('cadastro-msg').className = 'error';
+                return;
+            }
+            usuarios[usuario] = senha;
+            setUsuarios(usuarios);
+            document.getElementById('cadastro-msg').textContent = 'Cadastro realizado com sucesso!';
+            document.getElementById('cadastro-msg').className = 'msg';
+            setTimeout(() => {
+                toggleForm('login');
+            }, 1200);
+        }
+
+        function login() {
+            const usuario = document.getElementById('login-usuario').value.trim();
+            const senha = document.getElementById('login-senha').value.trim();
+            let usuarios = getUsuarios();
+            if (!usuario || !senha) {
+                document.getElementById('login-msg').textContent = 'Preencha todos os campos!';
+                document.getElementById('login-msg').className = 'error';
+                return;
+            }
+            if (usuarios[usuario] && usuarios[usuario] === senha) {
+                document.getElementById('login-msg').textContent = 'Login realizado com sucesso!';
+                document.getElementById('login-msg').className = 'msg';
+                // Redirecionar para página principal, se quiser
+                // window.location.href = "pagina_principal.html";
+            } else {
+                document.getElementById('login-msg').textContent = 'Usuário ou senha incorretos!';
+                document.getElementById('login-msg').className = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
