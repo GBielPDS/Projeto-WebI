@@ -1,89 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Produtos - ALPHA CLOTHING</title>
-    <link rel="stylesheet" href="/css/style_de_produtos.css     ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>ALPHA CLOTHING - Produtos</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style_de_produtos.css">
+    
 </head>
 <body>
 
-    <header class="header scrolled">
-        <a href="index.html" class="header__logo">ALPHA CLOTHING</a>
-        <nav class="header__nav">
-            <a href="index.html" class="header__nav-link">Home</a>
-            <a href="index.html#about" class="header__nav-link">About Us</a>
-            <a href="#" class="header__nav-link active">Produtos</a>
-            <a href="index.html#contact" class="header__nav-link">Contato</a>
-            <a href="index.html#blogs" class="header__nav-link">Blog</a>
-        </nav>
-        <div class="header__icons">
-            <div class="header__icon-item" id="search-btn"><i class="fas fa-search"></i></div>
-            <a href="carrinho.html" class="header__icon-item cart-icon">
+<header class="cabecalho">
+
+    <a href="index.html" class="logo">
+        <img src="/images/logo.png" alt="Logo Alpha Clothing">
+    </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">Sobre</a>
+        <a href="#" class="active">Produtos</a>
+        <a href="paginas/carrinho.html">Carrinho</a>
+    </nav>
+
+    <div class="icones">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="pesquisa">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+
+</header>
+
+<main class="products-page">
+    <h1 class="titulos"> nossos <span>produtos</span> </h1>
+
+    <div class="filter-sort-container">
+        <div class="filter-group">
+            <h3 class="filter-title">Filter by Category</h3>
+            <ul class="category-list">
+                <li class="active" data-category="all">All</li>
+                <li data-category="t-shirts">T-Shirts</li>
+                <li data-category="pants">Pants</li>
+                <li data-category="dresses">Dresses</li>
+            </ul>
         </div>
-    </header>
-
-    <main class="produtos-main">
-        <aside class="barra-lateral-filtros">
-            <h3 class="barra-lateral__titulo">Filtros</h3>
-            
-            <div class="grupo-filtro grupo-filtro-busca">
-                <input type="text" id="campo-busca" placeholder="Buscar produtos...">
-                <i class="fas fa-search"></i>
-            </div>
-            
-            <div class="grupo-filtro grupo-filtro-categorias">
-                <h4>Categorias</h4>
-                <div class="botoes-categoria">
-                    <button class="botao-categoria ativo" data-category="all">Todas as Peças</button>
-                    <button class="botao-categoria" data-category="blusas">Blusas</button>
-                    <button class="botao-categoria" data-category="calcas">Calças</button>
-                    <button class="botao-categoria" data-category="vestidos">Vestidos</button>
-                    <button class="botao-categoria" data-category="acessorios">Acessórios</button>
-                </div>
-            </div>
-        </aside>
-
-        <section class="secao-produtos">
-            <div class="conteudo-produtos">
-                <div class="cabecalho-conteudo-produtos">
-                    <div class="info-cabecalho">
-                        <h2 class="titulo-secao">Nossos <span>Produtos</span></h2>
-                        <p class="contador-produto">Exibindo <span>0</span> produtos</p>
-                    </div>
-                    <div class="ordenacao-dropdown">
-                        <label for="ordenar-por">Ordenar por Preço:</label>
-                        <select id="ordenar-por">
-                            <option value="default">Padrão</option>
-                            <option value="asc">Menor para Maior</option>
-                            <option value="desc">Maior para Menor</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="grade-produtos">
-                </div>
-                
-                <div class="mensagem-sem-produtos" style="display:none;">
-                    <h3>Nenhum produto encontrado!</h3>
-                    <p>Por favor, ajuste seus filtros ou termo de busca.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="modal" id="modal-visualizacao-rapida">
-        <div class="modal__conteudo">
-            <span class="modal__botao-fechar">&times;</span>
-            <div class="modal__detalhes-produto">
-            </div>
+        <div class="sort-group">
+            <h3 class="sort-title">Sort by Price</h3>
+            <select id="sort-by-price">
+                <option value="default">Default</option>
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
         </div>
     </div>
 
-    <script src="/js/script_de_produtos.js"></script>
+    <div class="box-produtos products-grid">
+        </div>
+</main>
+
+<section class="footer">
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="links">
+        <a href="index.html">home</a>
+        <a href="index.html#about">about</a>
+        <a href="index.html#menu">menu</a>
+        <a href="#">products</a>
+        <a href="index.html#review">review</a>
+        <a href="index.html#contact">contact</a>
+        <a href="index.html#blogs">blogs</a>
+    </div>
+
+    <div class="creditos">created by <span>mr. web designer</span> | all rights reserved</div>
+
+</section>
+
+<script src="/js/script_de_produtos.js"></script>
+
 </body>
 </html>
