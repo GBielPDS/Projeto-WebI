@@ -381,13 +381,14 @@ section{
     color: var(--main-color);
 }
 
-.produtos .box-produtos .box .conteudo .preco{
+.produtos .box-produtos .box .conteudo .preco span{
     color:#fff;
     font-size: 2.5rem;
 }
 
-.produtos .box-produtos .box .conteudo .preco span{
+.produtos .box-produtos .box .conteudo .preco del{
     text-decoration: line-through;
+    color: #fff;
     font-weight: lighter;
     font-size: 1.5rem;
 }

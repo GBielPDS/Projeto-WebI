@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "imagens": [
+      "img/camiseta1_main.jpg",
+      "img/camiseta1_1.jpg",
+      "img/camiseta1_2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "imagens": [
+      "img/calca1_main.jpg",
+      "img/calca1_1.jpg"
+    ]
+  }
+]
