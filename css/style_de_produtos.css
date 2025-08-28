@@ -222,11 +222,21 @@ section{
     padding: 2rem;
 }
 
-.box-produtos .box .imagens img{
-    height: 25rem;
+/* CORREÇÃO AQUI: Garante que as imagens não diminuam */
+.box-produtos .box .imagens{
+    height: 25rem; /* Altura fixa para o contêiner da imagem */
     width: 100%;
-    object-fit: cover;
+    overflow: hidden; /* Esconde partes da imagem que ultrapassem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 2.5rem 0;
+}
+
+.box-produtos .box .imagens img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Redimensiona a imagem para caber no contêiner sem cortar */
 }
 
 .box-produtos .box .conteudo h3{

@@ -39,17 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryList = document.querySelector('.category-list');
     const sortByPrice = document.getElementById('sort-by-price');
     const headingSpan = document.querySelector('.titulos span');
-    const noProductsMessage = document.querySelector('.no-products-message');
 
     // --- Dados de produtos (simulação de uma API)
     const products = [
-        { id: 1, name: 'Camiseta Básica', category: 't-shirts', price: 49.90, originalPrice: 69.90, image: '' },
-        { id: 2, name: 'Calça Jeans Skinny', category: 'pants', price: 129.90, originalPrice: 159.90, image: 'https://via.placeholder.com/300x300.png?text=Calca' },
-        { id: 3, name: 'Vestido de Verão', category: 'dresses', price: 89.90, originalPrice: 119.90, image: 'https://via.placeholder.com/300x300.png?text=Vestido' },
-        { id: 4, name: 'Camiseta Estampada', category: 't-shirts', price: 59.90, originalPrice: null, image: 'https://via.placeholder.com/300x300.png?text=Camiseta+Estampada' },
-        { id: 5, name: 'Calça de Moletom', category: 'pants', price: 99.90, originalPrice: null, image: 'https://via.placeholder.com/300x300.png?text=Moletom' },
-        { id: 6, name: 'Vestido de Gala', category: 'dresses', price: 250.00, originalPrice: 300.00, image: 'https://via.placeholder.com/300x300.png?text=Vestido+Gala' },
-        { id: 7, name: 'Saia Midi', category: 'dresses', price: 75.00, originalPrice: null, image: 'https://via.placeholder.com/300x300.png?text=Saia+Midi' }
+         { id: 1, name: 'Camiseta Básica', category: 't-shirts', price: 49.90, originalPrice: 69.90, image: '/images/Camiseta Básica.webp' },
+        { id: 2, name: 'Calça Jeans Skinny', category: 'pants', price: 129.90, originalPrice: 159.90, image: '/images/Calça Jeans Skinn.jpg' },
+        { id: 3, name: 'Vestido de Verão', category: 'dresses', price: 89.90, originalPrice: 119.90, image: '/images/Vestido de Verão.jpeg' },
+        { id: 4, name: 'Camiseta Estampada', category: 't-shirts', price: 59.90, originalPrice: null, image: '/images/Camiseta Estampada.webp' },
+        { id: 5, name: 'Calça de Moletom', category: 'pants', price: 99.90, originalPrice: null, image: '/images/calça moletom feminina.jpg' },
+        { id: 6, name: 'Vestido de Gala', category: 'dresses', price: 250.00, originalPrice: 300.00, image: '/images/Vestido de Gala.jpg' },
+        { id: 7, name: 'Saia Midi', category: 'dresses', price: 75.00, originalPrice: null, image: '/images/Saia Midi.webp' }
     ];
 
     let currentProducts = [...products];
