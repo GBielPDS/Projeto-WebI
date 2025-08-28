@@ -1,91 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrinho</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <title>Seu Carrinho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style_carrinho.css" />
 </head>
 <body>
 
 <header class="cabecalho">
-  <a href="/index.html" class="logo">
-    <img src="/images/logo.png" alt="">
-  </a>
-
+  <a href="/index.html" class="logo"><img src="/images/logo.png" alt="Logo" /></a>
   <nav class="navbar">
     <a href="/index.html">Home</a>
-    <a href="sobre_nos.html">Sobre</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="#">Carrinho</a>
+    <a href="/index.html#produtos">Produtos</a>
+    <a href="/carrinho.html">Carrinho</a>
   </nav>
-
   <div class="icones">
     <div class="fas fa-search" id="search-btn"></div>
     <div class="fas fa-shopping-cart" id="cart-btn"></div>
     <div class="fas fa-bars" id="menu-btn"></div>
   </div>
-
   <div class="pesquisa">
-    <input type="search" id="search-box" placeholder="search here...">
+    <input type="search" id="search-box" placeholder="Pesquisar..." />
     <label for="search-box" class="fas fa-search"></label>
   </div>
 </header>
 
-<section class="carrinho" id="carrinho" style="padding: 2rem 9%;">
-  <h1 class="titulos"><span>Seu</span> carrinho</h1>
+<main class="cart">
+  <h1 class="cart-title">Seu Carrinho</h1>
 
-  <div id="cart-empty" class="cart-empty">Seu carrinho está vazio.</div>
+  <div id="cart-empty" style="display:none" class="cart-empty">
+    Seu carrinho está vazio.
+  </div>
 
-  <div id="cart-container" class="cart-container" style="display:none">
-    <div class="cart-wrap">
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Preço</th>
-            <th>Qtd.</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody id="cart-items"></tbody>
-      </table>
+  <div id="cart-container" style="display:none">
+    <table class="cart-table" role="table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Qtd.</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
 
-      <div class="cart-footer">
-        <a href="/index.html" class="botao">Continuar comprando</a>
-        <button id="clear-cart" class="botao" type="button">Esvaziar carrinho</button>
-        <div class="cart-total">Total: <strong id="cart-total">R$ 0,00</strong></div>
-        <button id="checkout" class="botao" type="button">Finalizar pedido</button>
+    <div class="cart-footer">
+      <div class="cart-actions">
+        <a href="/index.html#produtos" class="btn btn-outlined">Continuar Comprando</a>
+        <button id="clear-cart" class="btn btn-outlined">Esvaziar Carrinho</button>
+      </div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
       </div>
     </div>
+
+    <button id="checkout" class="btn btn-primary btn-full">Finalizar Pedido</button>
   </div>
-</section>
+</main>
 
-<section class="footer">
-  <div class="share">
-    <a href="#" class="fab fa-facebook-f"></a>
-    <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-instagram"></a>
-    <a href="#" class="fab fa-linkedin"></a>
-    <a href="#" class="fab fa-pinterest"></a>
-  </div>
+<footer class="rodape">
+  <small>© 2025 - Sua Loja</small>
+</footer>
 
-  <div class="links">
-    <a href="#">home</a>
-    <a href="#">about</a>
-    <a href="#">menu</a>
-    <a href="#">products</a>
-    <a href="#">review</a>
-    <a href="#">contact</a>
-    <a href="#">blogs</a>
-  </div>
-
-  <div class="creditos">created by <span>mr. web designer</span> | all rights reserved</div>
-</section>
-
-  <script src="/js/script_carrinho.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/script_carrinho.js"></script>
 </body>
 </html>

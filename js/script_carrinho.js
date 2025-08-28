@@ -13,19 +13,15 @@
 
   const parsePrice = (txt) => {
     if (!txt) return 0;
-    // captura o primeiro número (suporta "R$ 1.234,56" ou "$15.99")
     const only = (txt + "").replace(/[^\d.,]/g, "");
     if (!only) return 0;
-    // Se tem vírgula e ponto, assume vírgula decimal (formato BR)
     if (only.includes(",") && only.includes(".")) {
       const semPontos = only.replace(/\./g, "");
       return parseFloat(semPontos.replace(",", "."));
     }
-    // Se tem vírgula mas não ponto, troca vírgula por ponto
     if (only.includes(",") && !only.includes(".")) {
       return parseFloat(only.replace(",", "."));
     }
-    // Caso padrão (15.99)
     return parseFloat(only);
   };
 
@@ -75,21 +71,24 @@
 
   // -------- Captura de produto a partir do card --------
   const getProductFromButton = (btn) => {
-    // Permite usar data-attrs (opcional). Se não tiver, puxamos do card.
     const ds = btn.dataset || {};
     let box = btn.closest(".box");
     let name =
       ds.name ||
       (box ? $("h3", box)?.textContent?.trim() : null) ||
       "Produto";
+
+    // AJUSTE 1: aceitar data-price com vírgula ou "R$"
     let price =
-      ds.price ? parseFloat(ds.price) :
+      ds.price ? parsePrice(ds.price) :
       (box ? parsePrice($(".preco", box)?.textContent) : 0);
+
+    // AJUSTE 2: fallback para qualquer <img> dentro do card
     let img =
       ds.image ||
-      (box ? $(".imagens img", box)?.getAttribute("src") : "images/placeholder.png");
+      (box ? ($(".imagens img", box) || $("img", box))?.getAttribute("src") : null) ||
+      "images/placeholder.png";
 
-    // ID estável: prioriza data-id; se não houver, deriva de nome + arquivo da imagem
     let id =
       ds.id ||
       `${slug(name)}-${slug((img || "").split("/").pop() || "img")}`;
@@ -140,14 +139,18 @@
       document.body.appendChild(el);
     }
     el.textContent = msg;
-    el.className = "toast--show";
+    el.classList.remove("toast--hide");
+    el.classList.add("toast--show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => (el.className = "toast--hide"), 1500);
+    toastTimer = setTimeout(() => {
+      el.classList.remove("toast--show");
+      el.classList.add("toast--hide");
+    }, 1500);
   };
 
-  // -------- Listeners globais (adicionar ao carrinho) --------
+  // -------- Listeners globais --------
   document.addEventListener("click", (e) => {
-    // Botão "adicionar ao carrinho" nos cards (usa .botao dentro de .produtos .box)
+    // Botão "adicionar ao carrinho" nos cards
     if (e.target.matches(".produtos .box .botao")) {
       e.preventDefault();
       const product = getProductFromButton(e.target);
@@ -199,7 +202,7 @@
     const totalEl = $("#cart-total");
     const wrap = $("#cart-container");
     const empty = $("#cart-empty");
-    if (!tbody || !totalEl || !wrap || !empty) return; // não estamos na página do carrinho
+    if (!tbody || !totalEl || !wrap || !empty) return;
 
     const cart = loadCart();
     updateBadge(cart);
@@ -223,9 +226,9 @@
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td class="cart-col-prod">
-          <img src="${it.img}" alt="${it.name}" />
+          <img src="${it.img}" alt="${it.name}" onerror="this.src='/images/logo.png'"/>
           <div>
-            <div class="cart-prod-name">${it.name}</div>
+            <div class="cart-prod-name" title="${it.name}">${it.name}</div>
             <button class="cart-btn-remove" data-id="${it.id}">Remover</button>
           </div>
         </td>
@@ -244,10 +247,8 @@
 
   // Botões da página do carrinho
   window.addEventListener("DOMContentLoaded", () => {
-    // Atualiza badge ao carregar qualquer página com header
     updateBadge();
 
-    // Ações específicas da página carrinho.html
     const clearBtn = $("#clear-cart");
     if (clearBtn) {
       clearBtn.addEventListener("click", (e) => {
@@ -262,11 +263,10 @@
     if (checkoutBtn) {
       checkoutBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        // Aqui você pode integrar com WhatsApp, formulário, ou backend
         alert("Finalização de pedido simulada. Integre aqui seu fluxo de checkout.");
       });
     }
 
-    renderCart(); // se estivermos na página de carrinho, renderiza
+    renderCart();
   });
 })();
