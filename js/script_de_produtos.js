@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Dados de produtos (simulação de uma API)
     const products = [
-        { id: 1, name: 'Camiseta Básica', category: 't-shirts', price: 49.90, originalPrice: 69.90, image: 'https://via.placeholder.com/300x300.png?text=Camiseta' },
+        { id: 1, name: 'Camiseta Básica', category: 't-shirts', price: 49.90, originalPrice: 69.90, image: '' },
         { id: 2, name: 'Calça Jeans Skinny', category: 'pants', price: 129.90, originalPrice: 159.90, image: 'https://via.placeholder.com/300x300.png?text=Calca' },
         { id: 3, name: 'Vestido de Verão', category: 'dresses', price: 89.90, originalPrice: 119.90, image: 'https://via.placeholder.com/300x300.png?text=Vestido' },
         { id: 4, name: 'Camiseta Estampada', category: 't-shirts', price: 59.90, originalPrice: null, image: 'https://via.placeholder.com/300x300.png?text=Camiseta+Estampada' },
