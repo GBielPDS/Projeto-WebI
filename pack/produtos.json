@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "imagemPrincipal": "images/product-1.png",
+    "imagemPrincipal": "/images/product-1.png",
     "nome": "Camiseta Básica",
-    "categoria": "Roupas",
+    "categoria": "t-shirts",
     "preco": 49.90,
     "precoOriginal": 79.90,
     "promocao": true,
@@ -11,9 +11,9 @@
   },
   {
     "id": 2,
-    "imagemPrincipal": "images/product-2.png",
+    "imagemPrincipal": "/images/product-2.png",
     "nome": "Calça Jeans Slim",
-    "categoria": "Roupas",
+    "categoria": "pants",
     "preco": 119.90,
     "precoOriginal": 159.90,
     "promocao": true,
@@ -21,42 +21,82 @@
   },
   {
     "id": 3,
-    "imagemPrincipal": "images/product-3.png",
+    "imagemPrincipal": "/images/product-3.png",
     "nome": "Jaqueta Jeans",
-    "categoria": "Roupas",
+    "categoria": "t-shirts",
     "preco": 199.90,
     "precoOriginal": 199.90,
     "promocao": false,
     "descricao": "Jaqueta jeans unissex com ótimo acabamento."
   },
   {
-    "id": 1,
-    "imagemPrincipal": "images/product-1.png",
+    "id": 4,
     "nome": "Camiseta Básica",
-    "categoria": "Roupas",
+    "categoria": "t-shirts",
     "preco": 49.90,
-    "precoOriginal": 79.90,
+    "precoOriginal": 69.90,
+    "imagemPrincipal": "/images/Camiseta Básica.webp",
     "promocao": true,
-    "descricao": "Camiseta 100% algodão, confortável e estilosa."
+    "descricao": "Camiseta básica confortável em algodão."
   },
   {
-    "id": 2,
-    "imagemPrincipal": "images/product-2.png",
-    "nome": "Calça Jeans Slim",
-    "categoria": "Roupas",
-    "preco": 119.90,
+    "id": 5,
+    "nome": "Calça Jeans Skinny",
+    "categoria": "pants",
+    "preco": 129.90,
     "precoOriginal": 159.90,
+    "imagemPrincipal": "/images/Calça Jeans Skinn.jpg",
     "promocao": true,
-    "descricao": "Calça jeans slim masculina, perfeita para o dia a dia."
+    "descricao": "Calça jeans skinny moderna e versátil."
   },
   {
-    "id": 3,
-    "imagemPrincipal": "images/product-3.png",
-    "nome": "Jaqueta Jeans",
-    "categoria": "Roupas",
-    "preco": 199.90,
-    "precoOriginal": 199.90,
+    "id": 6,
+    "nome": "Vestido de Verão",
+    "categoria": "dresses",
+    "preco": 89.90,
+    "precoOriginal": 119.90,
+    "imagemPrincipal": "/images/Vestido de Verão.jpeg",
+    "promocao": true,
+    "descricao": "Vestido leve e fresco para dias quentes."
+  },
+  {
+    "id": 7,
+    "nome": "Camiseta Estampada",
+    "categoria": "t-shirts",
+    "preco": 59.90,
+    "precoOriginal": null,
+    "imagemPrincipal": "/images/Camiseta Estampada.webp",
     "promocao": false,
-    "descricao": "Jaqueta jeans unissex com ótimo acabamento."
+    "descricao": "Camiseta com estampa criativa e casual."
+  },
+  {
+    "id": 8,
+    "nome": "Calça de Moletom",
+    "categoria": "pants",
+    "preco": 99.90,
+    "precoOriginal": null,
+    "imagemPrincipal": "/images/calça moletom feminina.jpg",
+    "promocao": false,
+    "descricao": "Calça de moletom macia e confortável."
+  },
+  {
+    "id": 9,
+    "nome": "Vestido de Gala",
+    "categoria": "dresses",
+    "preco": 250.00,
+    "precoOriginal": 300.00,
+    "imagemPrincipal": "/images/Vestido de Gala.jpg",
+    "promocao": true,
+    "descricao": "Vestido elegante para ocasiões especiais."
+  },
+  {
+    "id": 10,
+    "nome": "Saia Midi",
+    "categoria": "dresses",
+    "preco": 75.00,
+    "precoOriginal": null,
+    "imagemPrincipal": "/images/Saia Midi.webp",
+    "promocao": false,
+    "descricao": "Saia midi clássica e estilosa."
   }
 ]

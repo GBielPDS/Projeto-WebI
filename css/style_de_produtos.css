@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#e6d81c;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+/* ---- Scrollbar ---- */
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+/* ---- Fim Scrollbar ---- */
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+/* ---- Titulos ---- */
+.titulos{
+    text-align: center;
+    color:#fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.titulos span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+/* ---- Fim Titulos ---- */
+
+/* ---- Botões ---- */
+.botao{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+.botao:hover{
+    letter-spacing: .2rem;
+}
+/* ---- Fim Botões ---- */
+
+/* ---- Cabeçalho ---- */
+.cabecalho{
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+.cabecalho .logo img{
+    height: 6rem;
+}
+.cabecalho .navbar a{
+    margin:0 1rem;
+    font-size: 1.6rem;
+    color:#fff;
+}
+.cabecalho .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+/* ---- Icones ---- */
+.cabecalho .icones div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+.cabecalho .icones div:hover{
+    color:var(--main-color);
+}
+/* ---- Fim Icones ---- */
+
+#menu-btn{
+    display: none;
+}
+.cabecalho .pesquisa{
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+.cabecalho .pesquisa.active{
+    transform: scaleY(1);
+}
+.cabecalho .pesquisa input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+.cabecalho .pesquisa label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+.cabecalho .pesquisa label:hover{
+    color:var(--main-color);
+}
+/* ---- Fim Cabeçalho ---- */
+
+/* ---- Seção de Produtos (Página separada) ---- */
+.products-page {
+    padding-top: 10rem;
+}
+
+.filter-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 7%;
+    background: var(--black);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.filter-group, .sort-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-title, .sort-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.category-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category-list li {
+    background: var(--bg);
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    border: var(--border);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.category-list li:hover,
+.category-list li.active {
+    background: var(--main-color);
+    color: var(--black);
+}
+
+#sort-by-price {
+    background: var(--bg);
+    color: #fff;
+    border: var(--border);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Utiliza os estilos da homepage para a grade de produtos */
+.box-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    padding: 3rem 7%;
+}
+
+.box-produtos .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+/* CORREÇÃO AQUI: Garante que as imagens não diminuam */
+.box-produtos .box .imagens{
+    height: 25rem; /* Altura fixa para o contêiner da imagem */
+    width: 100%;
+    overflow: hidden; /* Esconde partes da imagem que ultrapassem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+.box-produtos .box .imagens img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Redimensiona a imagem para caber no contêiner sem cortar */
+}
+
+.box-produtos .box .conteudo h3{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.box-produtos .box .conteudo .preco{
+    color:#fff;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+
+.box-produtos .box .conteudo .preco span {
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+/* ---- Fim Seção de Produtos ---- */
+
+/* ---- Footer ---- */
+.footer{
+    background:var(--black);
+    text-align: center;
+}
+.footer .share{
+    padding:1rem 0;
+}
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    border:var(--border);
+    margin:.3rem;
+    border-radius: 50%;
+}
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+.footer .links a{
+    padding:.7rem 2rem;
+    color:#fff;
+    border:var(--border);
+    font-size: 2rem;
+}
+.footer .links a:hover{
+    background:var(--main-color);
+}
+.footer .creditos{
+    font-size: 2rem;
+    color:#fff;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+.footer .creditos span{
+    color:var(--main-color);
+}
+/* ---- Fim Footer ---- */
+
+/* media queries  */
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .cabecalho{
+        padding:1.5rem 2rem;
+    }
+    section{
+        padding:2rem;
+    }
+}
+
+@media (max-width:768px){
+    #menu-btn{
+        display: inline-block;
+    }
+    .cabecalho .navbar{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .cabecalho .navbar.active{
+        right:0;
+    }
+    .cabecalho .navbar a{
+        color:var(--black);
+        display: block;
+        margin:1.5rem;
+        padding:.5rem;
+        font-size: 2rem;
+    }
+    .cabecalho .pesquisa{
+        width: 90%;
+        right: 2rem;
+    }
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home .conteudo h3{
+        font-size: 4.5rem;
+    }
+    .home .conteudo p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}

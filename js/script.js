@@ -1,48 +1,82 @@
 // Produtos box
-async function carregarProdutos({ seletor = ".produtos .box-produtos" } = {}) {
-    try {
-        const response = await fetch("/pack/produtos.json");
-        const produtos = await response.json();
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".produtos .box-produtos");
+    const categoryButtons = document.querySelectorAll(".category-list li");
 
-        const container = document.querySelector(seletor);
-        container.innerHTML = "";
-
-        // lê limite do atributo HTML
-        const limiteAttr = parseInt(container.getAttribute("data-limite"));
-        const limite = limiteAttr > 0 ? limiteAttr : null;
-
-        const produtosFiltrados = limite ? produtos.slice(0, limite) : produtos;
-
-        produtosFiltrados.forEach(produto => {
-            const box = document.createElement("div");
-            box.classList.add("box");
-
-            const precoHtml = produto.promocao
-                ? `<span class="preco-promocional">R$ ${produto.preco.toFixed(2)}</span>
-                   <del class="preco-original">R$ ${produto.precoOriginal.toFixed(2)}</del>`
-                : `<span class="preco-normal">R$ ${produto.preco.toFixed(2)}</span>`;
-
-            box.innerHTML = `
-                <div class="imagem">
-                    <img src="${produto.imagemPrincipal}" alt="${produto.nome}">
-                </div>
-                <div class="conteudo">
-                    <h3>${produto.nome}</h3>
-                    <div class="preco">${precoHtml}</div>
-                    <a href="#" class="botao">adicionar ao carrinho</a>
-                </div>
-            `;
-
-            container.appendChild(box);
-        });
-    } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
+    // Função para filtrar por categoria (já criada)
+    function filtrarPorCategoria(categoria, produtosFiltrados) {
+        if (!categoria || categoria === "all") {
+            return produtosFiltrados;
+        }
+        return produtosFiltrados.filter(produto => produto.categoria === categoria);
     }
-}
+
+    // Função para carregar produtos
+    async function carregarProdutos(categoria = "all") {
+        try {
+            const response = await fetch("/pack/produtos.json");
+            const produtos = await response.json();
+
+            container.innerHTML = "";
+
+            let produtosFiltrados = filtrarPorCategoria(categoria, produtos);
+
+            produtosFiltrados.forEach(produto => {
+                const box = document.createElement("div");
+                box.classList.add("box");
+
+                const precoHtml = produto.promocao
+                    ? `<span>R$ ${produto.preco.toFixed(2).replace(".", ",")}</span>
+                       <del>R$ ${produto.precoOriginal.toFixed(2).replace(".", ",")}</del>`
+                    : `<span>R$ ${produto.preco.toFixed(2).replace(".", ",")}</span>`;
+
+                box.innerHTML = `
+                    <div class="imagens">
+                        <img src="${produto.imagemPrincipal}" alt="${produto.nome}">
+                    </div>
+                    <div class="conteudo">
+                        <h3>${produto.nome}</h3>
+                        <div class="preco">${precoHtml}</div>
+                        <a href="#" class="botao">adicionar ao carrinho</a>
+                    </div>
+                `;
+
+                container.appendChild(box);
+            });
+        } catch (error) {
+            console.error("Erro ao carregar produtos:", error);
+        }
+    }
+
+    // Inicializa mostrando todos os produtos
+    carregarProdutos("all");
+
+    // Adiciona evento de clique em cada botão de categoria
+    categoryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Remove a classe 'active' de todos
+            categoryButtons.forEach(b => b.classList.remove("active"));
+
+            // Adiciona 'active' no botão clicado
+            btn.classList.add("active");
+
+            // Pega a categoria do botão clicado
+            const categoriaSelecionada = btn.getAttribute("data-category");
+
+            // Carrega os produtos filtrados
+            carregarProdutos(categoriaSelecionada);
+        });
+    });
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     carregarProdutos();
 });
+
+
+
 
 
 
