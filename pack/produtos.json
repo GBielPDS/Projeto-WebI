@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "imagemPrincipal": "images/product-1.png",
+    "nome": "Camiseta Básica",
+    "categoria": "Roupas",
+    "preco": 49.90,
+    "precoOriginal": 79.90,
+    "promocao": true,
+    "descricao": "Camiseta 100% algodão, confortável e estilosa."
+  },
+  {
+    "id": 2,
+    "imagemPrincipal": "images/product-2.png",
+    "nome": "Calça Jeans Slim",
+    "categoria": "Roupas",
+    "preco": 119.90,
+    "precoOriginal": 159.90,
+    "promocao": true,
+    "descricao": "Calça jeans slim masculina, perfeita para o dia a dia."
+  },
+  {
+    "id": 3,
+    "imagemPrincipal": "images/product-3.png",
+    "nome": "Jaqueta Jeans",
+    "categoria": "Roupas",
+    "preco": 199.90,
+    "precoOriginal": 199.90,
+    "promocao": false,
+    "descricao": "Jaqueta jeans unissex com ótimo acabamento."
+  },
+  {
+    "id": 1,
+    "imagemPrincipal": "images/product-1.png",
+    "nome": "Camiseta Básica",
+    "categoria": "Roupas",
+    "preco": 49.90,
+    "precoOriginal": 79.90,
+    "promocao": true,
+    "descricao": "Camiseta 100% algodão, confortável e estilosa."
+  },
+  {
+    "id": 2,
+    "imagemPrincipal": "images/product-2.png",
+    "nome": "Calça Jeans Slim",
+    "categoria": "Roupas",
+    "preco": 119.90,
+    "precoOriginal": 159.90,
+    "promocao": true,
+    "descricao": "Calça jeans slim masculina, perfeita para o dia a dia."
+  },
+  {
+    "id": 3,
+    "imagemPrincipal": "images/product-3.png",
+    "nome": "Jaqueta Jeans",
+    "categoria": "Roupas",
+    "preco": 199.90,
+    "precoOriginal": 199.90,
+    "promocao": false,
+    "descricao": "Jaqueta jeans unissex com ótimo acabamento."
+  }
+]
