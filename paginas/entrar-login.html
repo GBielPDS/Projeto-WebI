@@ -73,17 +73,18 @@
             let usuarios = getUsuarios();
             if (!usuario || !senha) {
                 document.getElementById('login-msg').textContent = 'Preencha todos os campos!';
-                document.getElementById('login-msg').className = 'error';
+                document.getElementById('login-msg').className = 'msg erro';
                 return;
             }
-            if (usuarios[usuario] && usuarios[usuario] === senha) {
+            if (usuarios[usuario] === senha) {
                 document.getElementById('login-msg').textContent = 'Login realizado com sucesso!';
                 document.getElementById('login-msg').className = 'msg';
-                // Redirecionar para página principal, se quiser
-                // window.location.href = "pagina_principal.html";
+                setTimeout(() => {
+                    window.location.href = "../index.html";
+                }, 1000); // Redireciona após 1 segundo
             } else {
-                document.getElementById('login-msg').textContent = 'Usuário ou senha incorretos!';
-                document.getElementById('login-msg').className = 'error';
+                document.getElementById('login-msg').textContent = 'Usuário ou senha incorretos.';
+                document.getElementById('login-msg').className = 'msg erro';
             }
         }
     </script>
