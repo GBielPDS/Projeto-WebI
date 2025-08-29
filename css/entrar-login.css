@@ -60,3 +60,70 @@ button:hover {
     text-align: center;
     margin-bottom: 10px;
 }
+
+/* Header padrão igual ao Home */
+.header {
+    background: #222;
+    padding: 1.5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo img {
+    height: 50px;
+}
+
+.header .navbar a {
+    color: #fff;
+    margin: 0 1.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+    color: #e6d81c;
+}
+
+.header .icons div,
+.header .icons a {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.header .icons div:hover,
+.header .icons a:hover {
+    color: #e6d81c;
+}
+
+/* Listas e textos */
+ul, ol {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.7rem;
+    color: #fff;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    color: #e6d81c;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}

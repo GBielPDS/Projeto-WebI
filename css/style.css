@@ -566,17 +566,16 @@ section{
     color:var(--main-color);
 }
 
-
-
-
-
-
-
-
-
-
-
-
+#login-btn .fa-user {
+    font-size: 2.5rem;      /* mesmo tamanho dos outros ícones */
+    color: #fff;            /* cor branca igual aos outros ícones */
+    margin-left: 2rem;      /* espaçamento igual aos outros ícones */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#login-btn .fa-user:hover {
+    color: var(--main-color); /* cor de destaque ao passar o mouse */
+}
 
 /* media queries  */
 @media (max-width:991px){
