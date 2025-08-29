@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="/css/style.css">
-
+  <meta charset="UTF-8" />
+  <title>Seu Carrinho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style_carrinho.css" />
 </head>
-
-<!-- header / Barra de Navegação  -->
+<body>
 
 <header class="cabecalho">
-
-    <a href="/index.html" class="logo">
-        <img src="/images/logo.png" alt="">
-    </a>
-
-    <nav class="navbar">
-        <a href="/index.html">home</a>
-        <a href="sobre_nos.html">Sobre</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="#">Carrinho</a>
-
-    </nav>
-
-    <div class="icones">
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fas fa-bars" id="menu-btn"></div>
-    </div>
-
-    <div class="pesquisa">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
-    </div>
-
+  <a href="/index.html" class="logo"><img src="/images/logo.png" alt="Logo" /></a>
+  <nav class="navbar">
+    <a href="/index.html">Home</a>
+    <a href="sobre_nos.html">Sobre</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="#">Carrinho</a>
+  </nav>
+  <div class="icones">
+    <!-- <div class="fas fa-search" id="search-btn"></div> -->
+    <div href="paginas/carrinho.html" class="fas fa-shopping-cart" id="cart-btn"></div>
+    <!-- <div class="fas fa-bars" id="menu-btn"></div> -->
+  </div>
 </header>
+
+<main class="cart">
+  <h1 class="cart-title">Seu Carrinho</h1>
+
+  <div id="cart-empty" style="display:none" class="cart-empty">
+    Seu carrinho está vazio.
+  </div>
+
+  <div id="cart-container" style="display:none">
+    <table class="cart-table" role="table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Qtd.</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
+
+    <div class="cart-footer">
+      <div class="cart-actions">
+        <a href="/index.html#produtos" class="btn btn-outlined">Continuar Comprando</a>
+        <button id="clear-cart" class="btn btn-outlined">Esvaziar Carrinho</button>
+      </div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+    </div>
+
+    <button id="checkout" class="btn btn-primary btn-full">Finalizar Pedido</button>
+  </div>
+</main>
+
+<footer class="rodape">
+    <div class="share">
+        <a href="https://github.com/GBielPDS/Projeto-WebI" target="_blank" class="github-btn">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+  <small>© 2025 - Sua Loja</small>
+</footer>
+
+<script src="/js/script.js"></script>
+<script src="/js/script_carrinho.js"></script>
+</body>
+</html>

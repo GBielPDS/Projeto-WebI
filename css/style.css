@@ -645,6 +645,26 @@ section{
     font-size: 1.5rem;
 }
 
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.github-btn:hover {
+  background: #000;
+  transform: scale(1.1);
+}
+
+
 
 
 
