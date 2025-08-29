@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "imagemPrincipal": "/images/product-1.png",
-    "nome": "Camiseta Básica",
+    "imagemPrincipal": "/images/camisa moleton.jpg",
+    "nome": "Camisa Moleton",
     "categoria": "t-shirts",
     "preco": 49.90,
     "precoOriginal": 79.90,
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "imagemPrincipal": "/images/product-2.png",
+    "imagemPrincipal": "/images/calca-jeans-skinny.webp",
     "nome": "Calça Jeans Slim",
     "categoria": "pants",
     "preco": 119.90,
@@ -21,11 +21,11 @@
   },
   {
     "id": 3,
-    "imagemPrincipal": "/images/product-3.png",
+    "imagemPrincipal": "/images/jaqueta-jeans.jpg",
     "nome": "Jaqueta Jeans",
     "categoria": "t-shirts",
-    "preco": 199.90,
-    "precoOriginal": 199.90,
+    "preco": 99.90,
+    "precoOriginal": 99.90,
     "promocao": false,
     "descricao": "Jaqueta jeans unissex com ótimo acabamento."
   },

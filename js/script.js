@@ -74,17 +74,3 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     carregarProdutos();
 });
-
-
-
-
-
-
-
-let searchForm = document.querySelector('.pesquisa');
-
-document.querySelector('#search-btn').onclick = () =>{
-    searchForm.classList.toggle('active');
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-}
