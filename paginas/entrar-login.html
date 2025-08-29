@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="../css/entrar-login.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form">
+            <img src="../images/logo.png" alt="Logo do site" style="display:block;margin:0 auto 15px auto;width:80px;height:auto;">
+            <h2>Login</h2>
+            <div id="login-msg" class="msg"></div>
+            <input type="text" id="login-usuario" placeholder="Usuário" required>
+            <input type="password" id="login-senha" placeholder="Senha" required>
+            <button onclick="login()">Entrar</button>
+            <span class="toggle-link" onclick="toggleForm('cadastro')">Não tem conta? Cadastre-se</span>
+        </div>
+        <div id="cadastro-form" style="display:none;">
+            <img src="../images/logo.png" alt="Logo do site" style="display:block;margin:0 auto 15px auto;width:80px;height:auto;">
+            <h2>Cadastro</h2>
+            <div id="cadastro-msg" class="msg"></div>
+            <input type="text" id="cadastro-usuario" placeholder="Usuário" required>
+            <input type="password" id="cadastro-senha" placeholder="Senha" required>
+            <button onclick="cadastro()">Cadastrar</button>
+            <span class="toggle-link" onclick="toggleForm('login')">Já tem conta? Faça login</span>
+        </div>
+    </div>
+    <script src="../js/entrar-login.js"></script>
+</body>
+</html>
